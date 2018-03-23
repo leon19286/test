@@ -17,37 +17,34 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 class TestUnit5 {
 
-	@ParameterizedTest
-	@ValueSource(strings = { "racecar", "radar", "able was I ere I saw elba" })
-	void palindromes(String candidate) {
-		assertTrue(!candidate.isEmpty());
-	}
+    @ParameterizedTest
+    @ValueSource(strings = { "racecar", "radar", "able was I ere I saw elba" })
+    void palindromes(String candidate) {
+        assertTrue(!candidate.isEmpty());
+    }
 
-	@ParameterizedTest
-	@MethodSource("stringProvider")
-	void testWithSimpleMethodSource(String argument) {
-		assertNotNull(argument);
-	}
+    @ParameterizedTest
+    @MethodSource("stringProvider")
+    void testWithSimpleMethodSource(String argument) {
+        assertNotNull(argument);
+    }
 
-	static Stream<String> stringProvider() {
-		return Stream.of("foo", "bar");
-	}
+    static Stream<String> stringProvider() {
+        return Stream.of("foo", "bar");
+    }
 
-	@ParameterizedTest
-	@MethodSource
-	void testWithSimpleMethodSourceHavingNoValue(String argument) {
-		assertNotNull(argument);
-	}
+    @ParameterizedTest
+    @MethodSource
+    void testWithSimpleMethodSourceHavingNoValue(String argument) {
+        assertNotNull(argument);
+    }
 
-	static Stream<String> testWithSimpleMethodSourceHavingNoValue() {
-		return Stream.of("foo", "bar");
-	}
+    static Stream<String> testWithSimpleMethodSourceHavingNoValue() {
+        return Stream.of("foo", "bar");
+    }
 
-	@TestFactory
-	Collection<DynamicTest> dynamicTestsFromCollection() {
-		return Arrays.asList(
-				dynamicTest("1st dynamic test", () -> assertTrue(true)),
-				dynamicTest("2nd dynamic test", () -> assertEquals(4, 2 * 2)
-						));
-	}
+    @TestFactory
+    Collection<DynamicTest> dynamicTestsFromCollection() {
+        return Arrays.asList(dynamicTest("1st dynamic test", () -> assertTrue(true)), dynamicTest("2nd dynamic test", () -> assertEquals(4, 2 * 2)));
+    }
 }

@@ -67,5 +67,9 @@ public class Order {
     }
 
     // hhh
+    
+    public static void main(String[] args) {
+
+    }
 
 }

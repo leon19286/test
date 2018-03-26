@@ -77,6 +77,7 @@ public class Order {
         System.out.println("test5 reb");
         System.out.println("test6 mer");
         System.out.println("test6 master");
+        System.out.println("good commit");
     }
 
 }

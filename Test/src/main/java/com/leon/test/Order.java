@@ -74,6 +74,7 @@ public class Order {
         System.out.println("master merge");
         System.out.println("test4 merge");
         System.out.println("master test5 reb");
+        System.out.println("test5 reb");
     }
 
 }
